@@ -12,6 +12,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerBtn: UIButton!
+    @IBOutlet weak var zipCodeLbl: UILabel!
+    @IBOutlet weak var zipCodeTxt: UITextField!
     
     let states = ["alaska", "bostan", "canada", "california", "bampbell"]
    
@@ -29,6 +31,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBAction func onStateBtnPressed(_ sender: AnyObject) {
         statePicker.isHidden = false
+        zipCodeLbl.isHidden = true
+        zipCodeTxt.isHidden = true
         
     }
 
@@ -48,6 +52,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         statePickerBtn.setTitle(states[row], for: UIControlState()) //UIControlState.normal
         statePicker.isHidden = true
+        zipCodeLbl.isHidden = false
+        zipCodeTxt.isHidden = false
     }
 
 
